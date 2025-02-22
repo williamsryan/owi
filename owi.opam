@@ -17,7 +17,7 @@ tags: ["owi" "ocaml" "webassembly" "wasm" "interpreter" "compiler"]
 homepage: "https://github.com/ocamlpro/owi"
 bug-reports: "https://github.com/ocamlpro/owi/issues"
 depends: [
-  "dune" {>= "3.0"}
+  "dune" {>= "3.16"}
   "ocaml" {>= "5.1"}
   "menhir" {build & >= "20220210"}
   "dune-build-info" {build}
