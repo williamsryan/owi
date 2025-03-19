@@ -37,3 +37,6 @@ val profile3 :
 
 (** print some error and exit *)
 val err : ('a, Format.formatter, unit, 'b) format4 -> 'a
+
+(** custom trace printing **)
+val debug_trace : string -> int32 -> int32 -> unit

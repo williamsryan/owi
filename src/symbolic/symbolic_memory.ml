@@ -116,7 +116,9 @@ let loadn m a n =
   loop a n 1 v0
 
 let load_8_s m a =
-  let v = loadn m (i32 a) 1 in
+  let addr = i32 a in
+  let v = loadn m addr 1 in
+  Log.debug_trace "SYMBOLIC MEMORY READ: addr=%ld\n" addr;
   match view v with
   | Val (Num (I8 i8)) -> Value.const_i32 (Int32.extend_s 8 (Int32.of_int i8))
   | _ -> cvtop (Ty_bitv 32) (Sign_extend 24) v
@@ -166,7 +168,9 @@ let storen m ~addr v n =
     Hashtbl.replace m.data addr' v'
   done
 
-let store_8 m ~addr v = storen m ~addr v 1
+let store_8 m ~addr v =
+  (* Log.debug_trace "SYMBOLIC MEMORY WRITE: addr=%ld" addr; *)
+  storen m ~addr v 1
 
 let store_16 m ~addr v = storen m ~addr v 2
 

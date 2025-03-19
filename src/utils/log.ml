@@ -22,3 +22,13 @@ let profile3 t a b c : unit = if !profiling_on then Fmt.epr t a b c
 
 (* TODO: remove this *)
 let err f = Fmt.failwith f
+
+let debug_trace fmt =
+  let open Format in
+  if !debug_on then
+    let fmt_wrapper = Format.asprintf fmt in
+    let fmt_value = function
+      | Value.I32 i -> sprintf "%ld" i  (* Convert `Value.I32` properly *)
+      | v -> sprintf "Unsupported value: %s" (Value.to_string v)  (* Handle other cases safely *)
+    in
+    fprintf std_formatter ("%s\n") (fmt_wrapper fmt_value);
