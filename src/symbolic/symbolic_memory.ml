@@ -118,7 +118,8 @@ let loadn m a n =
 let load_8_s m a =
   let addr = i32 a in
   let v = loadn m addr 1 in
-  Log.debug_trace "SYMBOLIC MEMORY READ: addr=%ld\n" addr;
+  (* Log.debug_trace "MEMORY READ: addr=%ld@." (Value.pp_int32 addr); *)
+  Log.debug_trace "Some debug message without variables";
   match view v with
   | Val (Num (I8 i8)) -> Value.const_i32 (Int32.extend_s 8 (Int32.of_int i8))
   | _ -> cvtop (Ty_bitv 32) (Sign_extend 24) v

@@ -39,4 +39,4 @@ val profile3 :
 val err : ('a, Format.formatter, unit, 'b) format4 -> 'a
 
 (** custom trace printing **)
-val debug_trace : string -> int32 -> int32 -> unit
+val debug_trace : (unit, Format.formatter, unit) format -> unit

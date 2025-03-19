@@ -1235,7 +1235,8 @@ module Make (P : Interpret_intf.P) :
       let memory_length = Memory.size mem in
       let offset = const offset in
       let addr = I32.(pos + offset) in
-      Log.debug_trace "MEMORY READ: addr=%ld\n" addr;
+      (* Log.debug_trace "MEMORY READ: addr=%ld@." Int32.pp (I32.to_int32 addr); *)
+      Log.debug_trace "Some debug message without variables";
       let> out_of_bounds =
         Bool.or_ I32.(offset < const 0l) I32.(pos < const 0l)
       in
@@ -1297,7 +1298,8 @@ module Make (P : Interpret_intf.P) :
         in
         if out_of_bounds then Choice.trap Out_of_bounds_memory_access
         else begin
-          Log.debug_trace "MEMORY WRITE: addr=%ld, value=%ld\n" addr n;
+          (* Log.debug_trace "MEMORY WRITE: addr=%ld, value=%ld\n" addr n; *)
+          Log.debug_trace "Some debug message without variables";
           let* () = Memory.store_32 mem ~addr n in
           st stack
         end
@@ -1311,7 +1313,7 @@ module Make (P : Interpret_intf.P) :
         in
         if out_of_bounds then Choice.trap Out_of_bounds_memory_access
         else begin
-          Log.debug_trace "MEMORY WRITE: addr=%ld, value=%Ld\n" addr n;
+          (* Log.debug_trace "MEMORY WRITE: addr=%ld, value=%Ld\n" addr n; *)
           let* () = Memory.store_64 mem ~addr n in
           st stack
         end )
