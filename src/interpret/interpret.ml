@@ -1187,6 +1187,7 @@ module Make (P : Interpret_intf.P) :
       let pos, stack = Stack.pop_i32 stack in
       let offset = const offset in
       let addr = I32.(pos + offset) in
+      Log.debug_trace "MEMORY READ: addr=%a@\n" Value.pp_int32 addr;
       let> out_of_bounds =
         Bool.or_ I32.(offset < const 0l)
         @@ Bool.or_
@@ -1235,7 +1236,6 @@ module Make (P : Interpret_intf.P) :
       let memory_length = Memory.size mem in
       let offset = const offset in
       let addr = I32.(pos + offset) in
-      (* Log.debug_trace "MEMORY READ: addr=%ld@." Int32.pp (I32.to_int32 addr); *)
       Log.debug_trace "MEMORY READ: addr=%a@\n" Value.pp_int32 addr;
       let> out_of_bounds =
         Bool.or_ I32.(offset < const 0l) I32.(pos < const 0l)
