@@ -24,4 +24,4 @@ let profile3 t a b c : unit = if !profiling_on then Fmt.epr t a b c
 let err f = Fmt.failwith f
 
 (* let debug_trace fmt = if !debug_on then Fmt.pf Fmt.stderr fmt *)
-let debug_trace t a b = if !debug_on then Fmt.epr t a b
+let debug_trace t a b : unit = if !debug_on then Fmt.epr t a b
