@@ -1,0 +1,1920 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>symbolic_choice.ml &mdash; Coverage report</title>
+    <meta name="description" content="91.77% coverage in src/symbolic/symbolic_choice.ml">
+    <link rel="stylesheet" href="../../coverage.css"/>
+    <script src="../../highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <div id="header">
+      <h1>
+        <a href="../../index.html">
+          <span class="dirname">src/symbolic/</span>symbolic_choice.ml
+        </a>
+      </h1>
+      <h2>91.77%</h2>
+    </div>
+    <div id="navbar">
+      <span class="unvisited" style="top:16.94%"></span>
+      <span class="unvisited" style="top:17.26%"></span>
+      <span class="unvisited" style="top:17.42%"></span>
+      <span class="unvisited" style="top:17.58%"></span>
+      <span class="unvisited" style="top:17.90%"></span>
+      <span class="unvisited" style="top:18.06%"></span>
+      <span class="unvisited" style="top:18.55%"></span>
+      <span class="unvisited" style="top:18.87%"></span>
+      <span class="unvisited" style="bottom:45.32%"></span>
+      <span class="unvisited" style="bottom:41.13%"></span>
+      <span class="unvisited" style="bottom:40.97%"></span>
+      <span class="unvisited" style="bottom:28.23%"></span>
+      <span class="unvisited" style="bottom:26.13%"></span>
+      <span class="some-visited" style="bottom:24.52%"></span>
+      <span class="unvisited" style="bottom:24.19%"></span>
+      <span class="unvisited" style="bottom:23.87%"></span>
+      <span class="unvisited" style="bottom:22.26%"></span>
+      <span class="unvisited" style="bottom:5.32%"></span>
+      <span class="unvisited" style="bottom:1.61%"></span>
+      <span class="unvisited" style="bottom:1.45%"></span>
+      <span class="unvisited" style="bottom:0.97%"></span>
+      <span class="unvisited" style="bottom:0.81%"></span>
+      <span class="unvisited" style="bottom:0.65%"></span>
+      <span class="unvisited" style="bottom:0.48%"></span>
+      <span class="unvisited" style="bottom:0.32%"></span>
+    </div>
+    <div id="report">
+      <div id="lines-layer">
+        <pre>
+<a id="L1"></a><span > </span>
+<a id="L2"></a><span > </span>
+<a id="L3"></a><span > </span>
+<a id="L4"></a><span > </span>
+<a id="L5"></a><span > </span>
+<a id="L6"></a><span > </span>
+<a id="L7"></a><span > </span>
+<a id="L8"></a><span > </span>
+<a id="L9"></a><span > </span>
+<a id="L10"></a><span > </span>
+<a id="L11"></a><span > </span>
+<a id="L12"></a><span > </span>
+<a id="L13"></a><span > </span>
+<a id="L14"></a><span > </span>
+<a id="L15"></a><span > </span>
+<a id="L16"></a><span > </span>
+<a id="L17"></a><span > </span>
+<a id="L18"></a><span > </span>
+<a id="L19"></a><span > </span>
+<a id="L20"></a><span > </span>
+<a id="L21"></a><span > </span>
+<a id="L22"></a><span > </span>
+<a id="L23"></a><span > </span>
+<a id="L24"></a><span > </span>
+<a id="L25"></a><span > </span>
+<a id="L26"></a><span > </span>
+<a id="L27"></a><span > </span>
+<a id="L28"></a><span class="visited"> </span>
+<a id="L29"></a><span > </span>
+<a id="L30"></a><span class="visited"> </span>
+<a id="L31"></a><span > </span>
+<a id="L32"></a><span class="visited"> </span>
+<a id="L33"></a><span > </span>
+<a id="L34"></a><span > </span>
+<a id="L35"></a><span class="visited"> </span>
+<a id="L36"></a><span > </span>
+<a id="L37"></a><span class="visited"> </span>
+<a id="L38"></a><span class="visited"> </span>
+<a id="L39"></a><span class="visited"> </span>
+<a id="L40"></a><span class="visited"> </span>
+<a id="L41"></a><span class="visited"> </span>
+<a id="L42"></a><span > </span>
+<a id="L43"></a><span class="visited"> </span>
+<a id="L44"></a><span class="visited"> </span>
+<a id="L45"></a><span class="visited"> </span>
+<a id="L46"></a><span > </span>
+<a id="L47"></a><span class="visited"> </span>
+<a id="L48"></a><span > </span>
+<a id="L49"></a><span > </span>
+<a id="L50"></a><span > </span>
+<a id="L51"></a><span > </span>
+<a id="L52"></a><span class="visited"> </span>
+<a id="L53"></a><span class="visited"> </span>
+<a id="L54"></a><span > </span>
+<a id="L55"></a><span > </span>
+<a id="L56"></a><span > </span>
+<a id="L57"></a><span class="visited"> </span>
+<a id="L58"></a><span > </span>
+<a id="L59"></a><span class="visited"> </span>
+<a id="L60"></a><span > </span>
+<a id="L61"></a><span class="visited"> </span>
+<a id="L62"></a><span > </span>
+<a id="L63"></a><span class="visited"> </span>
+<a id="L64"></a><span > </span>
+<a id="L65"></a><span > </span>
+<a id="L66"></a><span > </span>
+<a id="L67"></a><span > </span>
+<a id="L68"></a><span > </span>
+<a id="L69"></a><span > </span>
+<a id="L70"></a><span > </span>
+<a id="L71"></a><span > </span>
+<a id="L72"></a><span > </span>
+<a id="L73"></a><span > </span>
+<a id="L74"></a><span > </span>
+<a id="L75"></a><span class="visited"> </span>
+<a id="L76"></a><span class="visited"> </span>
+<a id="L77"></a><span > </span>
+<a id="L78"></a><span > </span>
+<a id="L79"></a><span class="visited"> </span>
+<a id="L80"></a><span > </span>
+<a id="L81"></a><span > </span>
+<a id="L82"></a><span class="visited"> </span>
+<a id="L83"></a><span class="visited"> </span>
+<a id="L84"></a><span class="visited"> </span>
+<a id="L85"></a><span class="visited"> </span>
+<a id="L86"></a><span class="visited"> </span>
+<a id="L87"></a><span class="visited"> </span>
+<a id="L88"></a><span > </span>
+<a id="L89"></a><span class="visited"> </span>
+<a id="L90"></a><span > </span>
+<a id="L91"></a><span > </span>
+<a id="L92"></a><span class="visited"> </span>
+<a id="L93"></a><span > </span>
+<a id="L94"></a><span > </span>
+<a id="L95"></a><span > </span>
+<a id="L96"></a><span > </span>
+<a id="L97"></a><span class="visited"> </span>
+<a id="L98"></a><span class="visited"> </span>
+<a id="L99"></a><span class="visited"> </span>
+<a id="L100"></a><span class="visited"> </span>
+<a id="L101"></a><span > </span>
+<a id="L102"></a><span class="visited"> </span>
+<a id="L103"></a><span > </span>
+<a id="L104"></a><span class="visited"> </span>
+<a id="L105"></a><span class="unvisited"> </span>
+<a id="L106"></a><span > </span>
+<a id="L107"></a><span class="unvisited"> </span>
+<a id="L108"></a><span class="unvisited"> </span>
+<a id="L109"></a><span class="unvisited"> </span>
+<a id="L110"></a><span > </span>
+<a id="L111"></a><span class="unvisited"> </span>
+<a id="L112"></a><span class="unvisited"> </span>
+<a id="L113"></a><span > </span>
+<a id="L114"></a><span > </span>
+<a id="L115"></a><span class="unvisited"> </span>
+<a id="L116"></a><span > </span>
+<a id="L117"></a><span class="unvisited"> </span>
+<a id="L118"></a><span > </span>
+<a id="L119"></a><span > </span>
+<a id="L120"></a><span > </span>
+<a id="L121"></a><span > </span>
+<a id="L122"></a><span > </span>
+<a id="L123"></a><span > </span>
+<a id="L124"></a><span > </span>
+<a id="L125"></a><span > </span>
+<a id="L126"></a><span > </span>
+<a id="L127"></a><span > </span>
+<a id="L128"></a><span > </span>
+<a id="L129"></a><span class="visited"> </span>
+<a id="L130"></a><span > </span>
+<a id="L131"></a><span class="visited"> </span>
+<a id="L132"></a><span > </span>
+<a id="L133"></a><span > </span>
+<a id="L134"></a><span class="visited"> </span>
+<a id="L135"></a><span > </span>
+<a id="L136"></a><span > </span>
+<a id="L137"></a><span class="visited"> </span>
+<a id="L138"></a><span class="visited"> </span>
+<a id="L139"></a><span > </span>
+<a id="L140"></a><span > </span>
+<a id="L141"></a><span class="visited"> </span>
+<a id="L142"></a><span > </span>
+<a id="L143"></a><span class="visited"> </span>
+<a id="L144"></a><span class="visited"> </span>
+<a id="L145"></a><span class="visited"> </span>
+<a id="L146"></a><span > </span>
+<a id="L147"></a><span > </span>
+<a id="L148"></a><span > </span>
+<a id="L149"></a><span > </span>
+<a id="L150"></a><span class="visited"> </span>
+<a id="L151"></a><span class="visited"> </span>
+<a id="L152"></a><span > </span>
+<a id="L153"></a><span class="visited"> </span>
+<a id="L154"></a><span > </span>
+<a id="L155"></a><span > </span>
+<a id="L156"></a><span > </span>
+<a id="L157"></a><span class="visited"> </span>
+<a id="L158"></a><span > </span>
+<a id="L159"></a><span class="visited"> </span>
+<a id="L160"></a><span > </span>
+<a id="L161"></a><span > </span>
+<a id="L162"></a><span > </span>
+<a id="L163"></a><span class="visited"> </span>
+<a id="L164"></a><span > </span>
+<a id="L165"></a><span class="visited"> </span>
+<a id="L166"></a><span > </span>
+<a id="L167"></a><span class="visited"> </span>
+<a id="L168"></a><span class="visited"> </span>
+<a id="L169"></a><span > </span>
+<a id="L170"></a><span > </span>
+<a id="L171"></a><span > </span>
+<a id="L172"></a><span > </span>
+<a id="L173"></a><span > </span>
+<a id="L174"></a><span > </span>
+<a id="L175"></a><span > </span>
+<a id="L176"></a><span > </span>
+<a id="L177"></a><span > </span>
+<a id="L178"></a><span > </span>
+<a id="L179"></a><span > </span>
+<a id="L180"></a><span class="visited"> </span>
+<a id="L181"></a><span > </span>
+<a id="L182"></a><span > </span>
+<a id="L183"></a><span class="visited"> </span>
+<a id="L184"></a><span > </span>
+<a id="L185"></a><span class="visited"> </span>
+<a id="L186"></a><span > </span>
+<a id="L187"></a><span > </span>
+<a id="L188"></a><span class="visited"> </span>
+<a id="L189"></a><span > </span>
+<a id="L190"></a><span class="visited"> </span>
+<a id="L191"></a><span class="visited"> </span>
+<a id="L192"></a><span class="visited"> </span>
+<a id="L193"></a><span class="visited"> </span>
+<a id="L194"></a><span > </span>
+<a id="L195"></a><span > </span>
+<a id="L196"></a><span > </span>
+<a id="L197"></a><span > </span>
+<a id="L198"></a><span class="visited"> </span>
+<a id="L199"></a><span > </span>
+<a id="L200"></a><span class="visited"> </span>
+<a id="L201"></a><span class="visited"> </span>
+<a id="L202"></a><span class="visited"> </span>
+<a id="L203"></a><span class="visited"> </span>
+<a id="L204"></a><span > </span>
+<a id="L205"></a><span > </span>
+<a id="L206"></a><span > </span>
+<a id="L207"></a><span > </span>
+<a id="L208"></a><span > </span>
+<a id="L209"></a><span > </span>
+<a id="L210"></a><span > </span>
+<a id="L211"></a><span > </span>
+<a id="L212"></a><span > </span>
+<a id="L213"></a><span > </span>
+<a id="L214"></a><span > </span>
+<a id="L215"></a><span > </span>
+<a id="L216"></a><span > </span>
+<a id="L217"></a><span > </span>
+<a id="L218"></a><span > </span>
+<a id="L219"></a><span > </span>
+<a id="L220"></a><span > </span>
+<a id="L221"></a><span > </span>
+<a id="L222"></a><span > </span>
+<a id="L223"></a><span > </span>
+<a id="L224"></a><span > </span>
+<a id="L225"></a><span > </span>
+<a id="L226"></a><span > </span>
+<a id="L227"></a><span > </span>
+<a id="L228"></a><span > </span>
+<a id="L229"></a><span > </span>
+<a id="L230"></a><span > </span>
+<a id="L231"></a><span > </span>
+<a id="L232"></a><span > </span>
+<a id="L233"></a><span > </span>
+<a id="L234"></a><span > </span>
+<a id="L235"></a><span > </span>
+<a id="L236"></a><span > </span>
+<a id="L237"></a><span > </span>
+<a id="L238"></a><span > </span>
+<a id="L239"></a><span > </span>
+<a id="L240"></a><span > </span>
+<a id="L241"></a><span > </span>
+<a id="L242"></a><span > </span>
+<a id="L243"></a><span > </span>
+<a id="L244"></a><span > </span>
+<a id="L245"></a><span > </span>
+<a id="L246"></a><span > </span>
+<a id="L247"></a><span > </span>
+<a id="L248"></a><span > </span>
+<a id="L249"></a><span > </span>
+<a id="L250"></a><span > </span>
+<a id="L251"></a><span > </span>
+<a id="L252"></a><span > </span>
+<a id="L253"></a><span > </span>
+<a id="L254"></a><span > </span>
+<a id="L255"></a><span > </span>
+<a id="L256"></a><span > </span>
+<a id="L257"></a><span > </span>
+<a id="L258"></a><span > </span>
+<a id="L259"></a><span > </span>
+<a id="L260"></a><span > </span>
+<a id="L261"></a><span > </span>
+<a id="L262"></a><span > </span>
+<a id="L263"></a><span > </span>
+<a id="L264"></a><span > </span>
+<a id="L265"></a><span > </span>
+<a id="L266"></a><span > </span>
+<a id="L267"></a><span > </span>
+<a id="L268"></a><span > </span>
+<a id="L269"></a><span > </span>
+<a id="L270"></a><span > </span>
+<a id="L271"></a><span > </span>
+<a id="L272"></a><span > </span>
+<a id="L273"></a><span > </span>
+<a id="L274"></a><span > </span>
+<a id="L275"></a><span > </span>
+<a id="L276"></a><span > </span>
+<a id="L277"></a><span > </span>
+<a id="L278"></a><span > </span>
+<a id="L279"></a><span > </span>
+<a id="L280"></a><span > </span>
+<a id="L281"></a><span > </span>
+<a id="L282"></a><span > </span>
+<a id="L283"></a><span class="visited"> </span>
+<a id="L284"></a><span class="visited"> </span>
+<a id="L285"></a><span > </span>
+<a id="L286"></a><span > </span>
+<a id="L287"></a><span class="visited"> </span>
+<a id="L288"></a><span class="visited"> </span>
+<a id="L289"></a><span > </span>
+<a id="L290"></a><span class="visited"> </span>
+<a id="L291"></a><span > </span>
+<a id="L292"></a><span class="visited"> </span>
+<a id="L293"></a><span > </span>
+<a id="L294"></a><span class="visited"> </span>
+<a id="L295"></a><span > </span>
+<a id="L296"></a><span class="visited"> </span>
+<a id="L297"></a><span > </span>
+<a id="L298"></a><span > </span>
+<a id="L299"></a><span > </span>
+<a id="L300"></a><span class="visited"> </span>
+<a id="L301"></a><span class="visited"> </span>
+<a id="L302"></a><span class="visited"> </span>
+<a id="L303"></a><span class="visited"> </span>
+<a id="L304"></a><span class="visited"> </span>
+<a id="L305"></a><span > </span>
+<a id="L306"></a><span > </span>
+<a id="L307"></a><span > </span>
+<a id="L308"></a><span class="visited"> </span>
+<a id="L309"></a><span > </span>
+<a id="L310"></a><span class="visited"> </span>
+<a id="L311"></a><span > </span>
+<a id="L312"></a><span > </span>
+<a id="L313"></a><span > </span>
+<a id="L314"></a><span > </span>
+<a id="L315"></a><span > </span>
+<a id="L316"></a><span class="visited"> </span>
+<a id="L317"></a><span class="visited"> </span>
+<a id="L318"></a><span > </span>
+<a id="L319"></a><span > </span>
+<a id="L320"></a><span > </span>
+<a id="L321"></a><span > </span>
+<a id="L322"></a><span > </span>
+<a id="L323"></a><span class="visited"> </span>
+<a id="L324"></a><span class="visited"> </span>
+<a id="L325"></a><span class="visited"> </span>
+<a id="L326"></a><span class="visited"> </span>
+<a id="L327"></a><span > </span>
+<a id="L328"></a><span > </span>
+<a id="L329"></a><span > </span>
+<a id="L330"></a><span class="visited"> </span>
+<a id="L331"></a><span class="visited"> </span>
+<a id="L332"></a><span class="visited"> </span>
+<a id="L333"></a><span class="visited"> </span>
+<a id="L334"></a><span class="visited"> </span>
+<a id="L335"></a><span class="visited"> </span>
+<a id="L336"></a><span class="visited"> </span>
+<a id="L337"></a><span class="visited"> </span>
+<a id="L338"></a><span class="visited"> </span>
+<a id="L339"></a><span class="unvisited"> </span>
+<a id="L340"></a><span > </span>
+<a id="L341"></a><span > </span>
+<a id="L342"></a><span > </span>
+<a id="L343"></a><span > </span>
+<a id="L344"></a><span > </span>
+<a id="L345"></a><span class="visited"> </span>
+<a id="L346"></a><span class="visited"> </span>
+<a id="L347"></a><span class="visited"> </span>
+<a id="L348"></a><span > </span>
+<a id="L349"></a><span > </span>
+<a id="L350"></a><span class="visited"> </span>
+<a id="L351"></a><span > </span>
+<a id="L352"></a><span > </span>
+<a id="L353"></a><span > </span>
+<a id="L354"></a><span > </span>
+<a id="L355"></a><span > </span>
+<a id="L356"></a><span > </span>
+<a id="L357"></a><span > </span>
+<a id="L358"></a><span > </span>
+<a id="L359"></a><span > </span>
+<a id="L360"></a><span > </span>
+<a id="L361"></a><span > </span>
+<a id="L362"></a><span class="visited"> </span>
+<a id="L363"></a><span class="visited"> </span>
+<a id="L364"></a><span class="visited"> </span>
+<a id="L365"></a><span class="unvisited"> </span>
+<a id="L366"></a><span class="unvisited"> </span>
+<a id="L367"></a><span class="visited"> </span>
+<a id="L368"></a><span > </span>
+<a id="L369"></a><span class="visited"> </span>
+<a id="L370"></a><span class="visited"> </span>
+<a id="L371"></a><span class="visited"> </span>
+<a id="L372"></a><span > </span>
+<a id="L373"></a><span > </span>
+<a id="L374"></a><span > </span>
+<a id="L375"></a><span class="visited"> </span>
+<a id="L376"></a><span class="visited"> </span>
+<a id="L377"></a><span class="visited"> </span>
+<a id="L378"></a><span class="visited"> </span>
+<a id="L379"></a><span > </span>
+<a id="L380"></a><span > </span>
+<a id="L381"></a><span class="visited"> </span>
+<a id="L382"></a><span > </span>
+<a id="L383"></a><span class="visited"> </span>
+<a id="L384"></a><span > </span>
+<a id="L385"></a><span class="visited"> </span>
+<a id="L386"></a><span > </span>
+<a id="L387"></a><span class="visited"> </span>
+<a id="L388"></a><span > </span>
+<a id="L389"></a><span > </span>
+<a id="L390"></a><span class="visited"> </span>
+<a id="L391"></a><span class="visited"> </span>
+<a id="L392"></a><span class="visited"> </span>
+<a id="L393"></a><span class="visited"> </span>
+<a id="L394"></a><span class="visited"> </span>
+<a id="L395"></a><span > </span>
+<a id="L396"></a><span > </span>
+<a id="L397"></a><span class="visited"> </span>
+<a id="L398"></a><span class="visited"> </span>
+<a id="L399"></a><span class="visited"> </span>
+<a id="L400"></a><span class="visited"> </span>
+<a id="L401"></a><span class="visited"> </span>
+<a id="L402"></a><span class="visited"> </span>
+<a id="L403"></a><span class="visited"> </span>
+<a id="L404"></a><span > </span>
+<a id="L405"></a><span class="visited"> </span>
+<a id="L406"></a><span > </span>
+<a id="L407"></a><span > </span>
+<a id="L408"></a><span > </span>
+<a id="L409"></a><span > </span>
+<a id="L410"></a><span > </span>
+<a id="L411"></a><span > </span>
+<a id="L412"></a><span class="visited"> </span>
+<a id="L413"></a><span class="visited"> </span>
+<a id="L414"></a><span class="visited"> </span>
+<a id="L415"></a><span class="visited"> </span>
+<a id="L416"></a><span class="visited"> </span>
+<a id="L417"></a><span class="visited"> </span>
+<a id="L418"></a><span > </span>
+<a id="L419"></a><span class="visited"> </span>
+<a id="L420"></a><span > </span>
+<a id="L421"></a><span class="visited"> </span>
+<a id="L422"></a><span > </span>
+<a id="L423"></a><span > </span>
+<a id="L424"></a><span class="visited"> </span>
+<a id="L425"></a><span class="visited"> </span>
+<a id="L426"></a><span class="visited"> </span>
+<a id="L427"></a><span class="visited"> </span>
+<a id="L428"></a><span class="visited"> </span>
+<a id="L429"></a><span > </span>
+<a id="L430"></a><span class="visited"> </span>
+<a id="L431"></a><span class="visited"> </span>
+<a id="L432"></a><span class="visited"> </span>
+<a id="L433"></a><span > </span>
+<a id="L434"></a><span class="visited"> </span>
+<a id="L435"></a><span > </span>
+<a id="L436"></a><span class="visited"> </span>
+<a id="L437"></a><span class="visited"> </span>
+<a id="L438"></a><span class="visited"> </span>
+<a id="L439"></a><span > </span>
+<a id="L440"></a><span class="visited"> </span>
+<a id="L441"></a><span > </span>
+<a id="L442"></a><span > </span>
+<a id="L443"></a><span > </span>
+<a id="L444"></a><span > </span>
+<a id="L445"></a><span class="unvisited"> </span>
+<a id="L446"></a><span > </span>
+<a id="L447"></a><span > </span>
+<a id="L448"></a><span > </span>
+<a id="L449"></a><span > </span>
+<a id="L450"></a><span > </span>
+<a id="L451"></a><span class="visited"> </span>
+<a id="L452"></a><span > </span>
+<a id="L453"></a><span class="visited"> </span>
+<a id="L454"></a><span class="visited"> </span>
+<a id="L455"></a><span class="visited"> </span>
+<a id="L456"></a><span class="visited"> </span>
+<a id="L457"></a><span class="visited"> </span>
+<a id="L458"></a><span class="unvisited"> </span>
+<a id="L459"></a><span class="visited"> </span>
+<a id="L460"></a><span > </span>
+<a id="L461"></a><span class="visited"> </span>
+<a id="L462"></a><span class="visited"> </span>
+<a id="L463"></a><span class="visited"> </span>
+<a id="L464"></a><span class="visited"> </span>
+<a id="L465"></a><span class="visited"> </span>
+<a id="L466"></a><span > </span>
+<a id="L467"></a><span > </span>
+<a id="L468"></a><span class="some-visited"> </span>
+<a id="L469"></a><span > </span>
+<a id="L470"></a><span class="unvisited"> </span>
+<a id="L471"></a><span > </span>
+<a id="L472"></a><span class="unvisited"> </span>
+<a id="L473"></a><span > </span>
+<a id="L474"></a><span class="visited"> </span>
+<a id="L475"></a><span > </span>
+<a id="L476"></a><span class="visited"> </span>
+<a id="L477"></a><span class="visited"> </span>
+<a id="L478"></a><span class="visited"> </span>
+<a id="L479"></a><span class="visited"> </span>
+<a id="L480"></a><span > </span>
+<a id="L481"></a><span class="visited"> </span>
+<a id="L482"></a><span class="unvisited"> </span>
+<a id="L483"></a><span > </span>
+<a id="L484"></a><span > </span>
+<a id="L485"></a><span > </span>
+<a id="L486"></a><span > </span>
+<a id="L487"></a><span > </span>
+<a id="L488"></a><span > </span>
+<a id="L489"></a><span > </span>
+<a id="L490"></a><span > </span>
+<a id="L491"></a><span > </span>
+<a id="L492"></a><span > </span>
+<a id="L493"></a><span class="visited"> </span>
+<a id="L494"></a><span > </span>
+<a id="L495"></a><span class="visited"> </span>
+<a id="L496"></a><span > </span>
+<a id="L497"></a><span class="visited"> </span>
+<a id="L498"></a><span class="visited"> </span>
+<a id="L499"></a><span > </span>
+<a id="L500"></a><span class="visited"> </span>
+<a id="L501"></a><span class="visited"> </span>
+<a id="L502"></a><span class="visited"> </span>
+<a id="L503"></a><span class="visited"> </span>
+<a id="L504"></a><span > </span>
+<a id="L505"></a><span > </span>
+<a id="L506"></a><span > </span>
+<a id="L507"></a><span class="visited"> </span>
+<a id="L508"></a><span > </span>
+<a id="L509"></a><span > </span>
+<a id="L510"></a><span > </span>
+<a id="L511"></a><span > </span>
+<a id="L512"></a><span class="visited"> </span>
+<a id="L513"></a><span class="visited"> </span>
+<a id="L514"></a><span class="visited"> </span>
+<a id="L515"></a><span class="visited"> </span>
+<a id="L516"></a><span > </span>
+<a id="L517"></a><span class="visited"> </span>
+<a id="L518"></a><span class="visited"> </span>
+<a id="L519"></a><span class="visited"> </span>
+<a id="L520"></a><span > </span>
+<a id="L521"></a><span class="visited"> </span>
+<a id="L522"></a><span > </span>
+<a id="L523"></a><span > </span>
+<a id="L524"></a><span > </span>
+<a id="L525"></a><span class="visited"> </span>
+<a id="L526"></a><span class="visited"> </span>
+<a id="L527"></a><span class="visited"> </span>
+<a id="L528"></a><span class="visited"> </span>
+<a id="L529"></a><span class="visited"> </span>
+<a id="L530"></a><span class="visited"> </span>
+<a id="L531"></a><span class="visited"> </span>
+<a id="L532"></a><span > </span>
+<a id="L533"></a><span class="visited"> </span>
+<a id="L534"></a><span > </span>
+<a id="L535"></a><span class="visited"> </span>
+<a id="L536"></a><span class="visited"> </span>
+<a id="L537"></a><span > </span>
+<a id="L538"></a><span class="visited"> </span>
+<a id="L539"></a><span class="visited"> </span>
+<a id="L540"></a><span class="visited"> </span>
+<a id="L541"></a><span > </span>
+<a id="L542"></a><span class="visited"> </span>
+<a id="L543"></a><span class="visited"> </span>
+<a id="L544"></a><span > </span>
+<a id="L545"></a><span > </span>
+<a id="L546"></a><span > </span>
+<a id="L547"></a><span > </span>
+<a id="L548"></a><span > </span>
+<a id="L549"></a><span > </span>
+<a id="L550"></a><span class="visited"> </span>
+<a id="L551"></a><span > </span>
+<a id="L552"></a><span class="visited"> </span>
+<a id="L553"></a><span > </span>
+<a id="L554"></a><span > </span>
+<a id="L555"></a><span class="visited"> </span>
+<a id="L556"></a><span class="visited"> </span>
+<a id="L557"></a><span class="visited"> </span>
+<a id="L558"></a><span class="visited"> </span>
+<a id="L559"></a><span > </span>
+<a id="L560"></a><span > </span>
+<a id="L561"></a><span class="visited"> </span>
+<a id="L562"></a><span class="visited"> </span>
+<a id="L563"></a><span > </span>
+<a id="L564"></a><span > </span>
+<a id="L565"></a><span class="visited"> </span>
+<a id="L566"></a><span class="visited"> </span>
+<a id="L567"></a><span > </span>
+<a id="L568"></a><span > </span>
+<a id="L569"></a><span > </span>
+<a id="L570"></a><span > </span>
+<a id="L571"></a><span class="visited"> </span>
+<a id="L572"></a><span class="visited"> </span>
+<a id="L573"></a><span > </span>
+<a id="L574"></a><span > </span>
+<a id="L575"></a><span > </span>
+<a id="L576"></a><span class="visited"> </span>
+<a id="L577"></a><span > </span>
+<a id="L578"></a><span class="visited"> </span>
+<a id="L579"></a><span class="visited"> </span>
+<a id="L580"></a><span class="visited"> </span>
+<a id="L581"></a><span class="visited"> </span>
+<a id="L582"></a><span class="visited"> </span>
+<a id="L583"></a><span class="visited"> </span>
+<a id="L584"></a><span class="visited"> </span>
+<a id="L585"></a><span class="visited"> </span>
+<a id="L586"></a><span class="visited"> </span>
+<a id="L587"></a><span class="unvisited"> </span>
+<a id="L588"></a><span > </span>
+<a id="L589"></a><span > </span>
+<a id="L590"></a><span > </span>
+<a id="L591"></a><span > </span>
+<a id="L592"></a><span > </span>
+<a id="L593"></a><span class="visited"> </span>
+<a id="L594"></a><span class="visited"> </span>
+<a id="L595"></a><span class="visited"> </span>
+<a id="L596"></a><span > </span>
+<a id="L597"></a><span > </span>
+<a id="L598"></a><span class="visited"> </span>
+<a id="L599"></a><span class="visited"> </span>
+<a id="L600"></a><span > </span>
+<a id="L601"></a><span > </span>
+<a id="L602"></a><span > </span>
+<a id="L603"></a><span class="visited"> </span>
+<a id="L604"></a><span > </span>
+<a id="L605"></a><span > </span>
+<a id="L606"></a><span > </span>
+<a id="L607"></a><span class="visited"> </span>
+<a id="L608"></a><span class="visited"> </span>
+<a id="L609"></a><span class="visited"> </span>
+<a id="L610"></a><span class="unvisited"> </span>
+<a id="L611"></a><span class="unvisited"> </span>
+<a id="L612"></a><span class="visited"> </span>
+<a id="L613"></a><span class="visited"> </span>
+<a id="L614"></a><span class="unvisited"> </span>
+<a id="L615"></a><span class="unvisited"> </span>
+<a id="L616"></a><span class="unvisited"> </span>
+<a id="L617"></a><span class="unvisited"> </span>
+<a id="L618"></a><span class="unvisited"> </span>
+<a id="L619"></a><span > </span>
+<a id="L620"></a><span > </span>
+</pre>
+      </div>
+      <div id="text-layer">
+        <pre id="line-numbers">
+<a href="#L1">  1</a>
+<a href="#L2">  2</a>
+<a href="#L3">  3</a>
+<a href="#L4">  4</a>
+<a href="#L5">  5</a>
+<a href="#L6">  6</a>
+<a href="#L7">  7</a>
+<a href="#L8">  8</a>
+<a href="#L9">  9</a>
+<a href="#L10"> 10</a>
+<a href="#L11"> 11</a>
+<a href="#L12"> 12</a>
+<a href="#L13"> 13</a>
+<a href="#L14"> 14</a>
+<a href="#L15"> 15</a>
+<a href="#L16"> 16</a>
+<a href="#L17"> 17</a>
+<a href="#L18"> 18</a>
+<a href="#L19"> 19</a>
+<a href="#L20"> 20</a>
+<a href="#L21"> 21</a>
+<a href="#L22"> 22</a>
+<a href="#L23"> 23</a>
+<a href="#L24"> 24</a>
+<a href="#L25"> 25</a>
+<a href="#L26"> 26</a>
+<a href="#L27"> 27</a>
+<a href="#L28"> 28</a>
+<a href="#L29"> 29</a>
+<a href="#L30"> 30</a>
+<a href="#L31"> 31</a>
+<a href="#L32"> 32</a>
+<a href="#L33"> 33</a>
+<a href="#L34"> 34</a>
+<a href="#L35"> 35</a>
+<a href="#L36"> 36</a>
+<a href="#L37"> 37</a>
+<a href="#L38"> 38</a>
+<a href="#L39"> 39</a>
+<a href="#L40"> 40</a>
+<a href="#L41"> 41</a>
+<a href="#L42"> 42</a>
+<a href="#L43"> 43</a>
+<a href="#L44"> 44</a>
+<a href="#L45"> 45</a>
+<a href="#L46"> 46</a>
+<a href="#L47"> 47</a>
+<a href="#L48"> 48</a>
+<a href="#L49"> 49</a>
+<a href="#L50"> 50</a>
+<a href="#L51"> 51</a>
+<a href="#L52"> 52</a>
+<a href="#L53"> 53</a>
+<a href="#L54"> 54</a>
+<a href="#L55"> 55</a>
+<a href="#L56"> 56</a>
+<a href="#L57"> 57</a>
+<a href="#L58"> 58</a>
+<a href="#L59"> 59</a>
+<a href="#L60"> 60</a>
+<a href="#L61"> 61</a>
+<a href="#L62"> 62</a>
+<a href="#L63"> 63</a>
+<a href="#L64"> 64</a>
+<a href="#L65"> 65</a>
+<a href="#L66"> 66</a>
+<a href="#L67"> 67</a>
+<a href="#L68"> 68</a>
+<a href="#L69"> 69</a>
+<a href="#L70"> 70</a>
+<a href="#L71"> 71</a>
+<a href="#L72"> 72</a>
+<a href="#L73"> 73</a>
+<a href="#L74"> 74</a>
+<a href="#L75"> 75</a>
+<a href="#L76"> 76</a>
+<a href="#L77"> 77</a>
+<a href="#L78"> 78</a>
+<a href="#L79"> 79</a>
+<a href="#L80"> 80</a>
+<a href="#L81"> 81</a>
+<a href="#L82"> 82</a>
+<a href="#L83"> 83</a>
+<a href="#L84"> 84</a>
+<a href="#L85"> 85</a>
+<a href="#L86"> 86</a>
+<a href="#L87"> 87</a>
+<a href="#L88"> 88</a>
+<a href="#L89"> 89</a>
+<a href="#L90"> 90</a>
+<a href="#L91"> 91</a>
+<a href="#L92"> 92</a>
+<a href="#L93"> 93</a>
+<a href="#L94"> 94</a>
+<a href="#L95"> 95</a>
+<a href="#L96"> 96</a>
+<a href="#L97"> 97</a>
+<a href="#L98"> 98</a>
+<a href="#L99"> 99</a>
+<a href="#L100">100</a>
+<a href="#L101">101</a>
+<a href="#L102">102</a>
+<a href="#L103">103</a>
+<a href="#L104">104</a>
+<a href="#L105">105</a>
+<a href="#L106">106</a>
+<a href="#L107">107</a>
+<a href="#L108">108</a>
+<a href="#L109">109</a>
+<a href="#L110">110</a>
+<a href="#L111">111</a>
+<a href="#L112">112</a>
+<a href="#L113">113</a>
+<a href="#L114">114</a>
+<a href="#L115">115</a>
+<a href="#L116">116</a>
+<a href="#L117">117</a>
+<a href="#L118">118</a>
+<a href="#L119">119</a>
+<a href="#L120">120</a>
+<a href="#L121">121</a>
+<a href="#L122">122</a>
+<a href="#L123">123</a>
+<a href="#L124">124</a>
+<a href="#L125">125</a>
+<a href="#L126">126</a>
+<a href="#L127">127</a>
+<a href="#L128">128</a>
+<a href="#L129">129</a>
+<a href="#L130">130</a>
+<a href="#L131">131</a>
+<a href="#L132">132</a>
+<a href="#L133">133</a>
+<a href="#L134">134</a>
+<a href="#L135">135</a>
+<a href="#L136">136</a>
+<a href="#L137">137</a>
+<a href="#L138">138</a>
+<a href="#L139">139</a>
+<a href="#L140">140</a>
+<a href="#L141">141</a>
+<a href="#L142">142</a>
+<a href="#L143">143</a>
+<a href="#L144">144</a>
+<a href="#L145">145</a>
+<a href="#L146">146</a>
+<a href="#L147">147</a>
+<a href="#L148">148</a>
+<a href="#L149">149</a>
+<a href="#L150">150</a>
+<a href="#L151">151</a>
+<a href="#L152">152</a>
+<a href="#L153">153</a>
+<a href="#L154">154</a>
+<a href="#L155">155</a>
+<a href="#L156">156</a>
+<a href="#L157">157</a>
+<a href="#L158">158</a>
+<a href="#L159">159</a>
+<a href="#L160">160</a>
+<a href="#L161">161</a>
+<a href="#L162">162</a>
+<a href="#L163">163</a>
+<a href="#L164">164</a>
+<a href="#L165">165</a>
+<a href="#L166">166</a>
+<a href="#L167">167</a>
+<a href="#L168">168</a>
+<a href="#L169">169</a>
+<a href="#L170">170</a>
+<a href="#L171">171</a>
+<a href="#L172">172</a>
+<a href="#L173">173</a>
+<a href="#L174">174</a>
+<a href="#L175">175</a>
+<a href="#L176">176</a>
+<a href="#L177">177</a>
+<a href="#L178">178</a>
+<a href="#L179">179</a>
+<a href="#L180">180</a>
+<a href="#L181">181</a>
+<a href="#L182">182</a>
+<a href="#L183">183</a>
+<a href="#L184">184</a>
+<a href="#L185">185</a>
+<a href="#L186">186</a>
+<a href="#L187">187</a>
+<a href="#L188">188</a>
+<a href="#L189">189</a>
+<a href="#L190">190</a>
+<a href="#L191">191</a>
+<a href="#L192">192</a>
+<a href="#L193">193</a>
+<a href="#L194">194</a>
+<a href="#L195">195</a>
+<a href="#L196">196</a>
+<a href="#L197">197</a>
+<a href="#L198">198</a>
+<a href="#L199">199</a>
+<a href="#L200">200</a>
+<a href="#L201">201</a>
+<a href="#L202">202</a>
+<a href="#L203">203</a>
+<a href="#L204">204</a>
+<a href="#L205">205</a>
+<a href="#L206">206</a>
+<a href="#L207">207</a>
+<a href="#L208">208</a>
+<a href="#L209">209</a>
+<a href="#L210">210</a>
+<a href="#L211">211</a>
+<a href="#L212">212</a>
+<a href="#L213">213</a>
+<a href="#L214">214</a>
+<a href="#L215">215</a>
+<a href="#L216">216</a>
+<a href="#L217">217</a>
+<a href="#L218">218</a>
+<a href="#L219">219</a>
+<a href="#L220">220</a>
+<a href="#L221">221</a>
+<a href="#L222">222</a>
+<a href="#L223">223</a>
+<a href="#L224">224</a>
+<a href="#L225">225</a>
+<a href="#L226">226</a>
+<a href="#L227">227</a>
+<a href="#L228">228</a>
+<a href="#L229">229</a>
+<a href="#L230">230</a>
+<a href="#L231">231</a>
+<a href="#L232">232</a>
+<a href="#L233">233</a>
+<a href="#L234">234</a>
+<a href="#L235">235</a>
+<a href="#L236">236</a>
+<a href="#L237">237</a>
+<a href="#L238">238</a>
+<a href="#L239">239</a>
+<a href="#L240">240</a>
+<a href="#L241">241</a>
+<a href="#L242">242</a>
+<a href="#L243">243</a>
+<a href="#L244">244</a>
+<a href="#L245">245</a>
+<a href="#L246">246</a>
+<a href="#L247">247</a>
+<a href="#L248">248</a>
+<a href="#L249">249</a>
+<a href="#L250">250</a>
+<a href="#L251">251</a>
+<a href="#L252">252</a>
+<a href="#L253">253</a>
+<a href="#L254">254</a>
+<a href="#L255">255</a>
+<a href="#L256">256</a>
+<a href="#L257">257</a>
+<a href="#L258">258</a>
+<a href="#L259">259</a>
+<a href="#L260">260</a>
+<a href="#L261">261</a>
+<a href="#L262">262</a>
+<a href="#L263">263</a>
+<a href="#L264">264</a>
+<a href="#L265">265</a>
+<a href="#L266">266</a>
+<a href="#L267">267</a>
+<a href="#L268">268</a>
+<a href="#L269">269</a>
+<a href="#L270">270</a>
+<a href="#L271">271</a>
+<a href="#L272">272</a>
+<a href="#L273">273</a>
+<a href="#L274">274</a>
+<a href="#L275">275</a>
+<a href="#L276">276</a>
+<a href="#L277">277</a>
+<a href="#L278">278</a>
+<a href="#L279">279</a>
+<a href="#L280">280</a>
+<a href="#L281">281</a>
+<a href="#L282">282</a>
+<a href="#L283">283</a>
+<a href="#L284">284</a>
+<a href="#L285">285</a>
+<a href="#L286">286</a>
+<a href="#L287">287</a>
+<a href="#L288">288</a>
+<a href="#L289">289</a>
+<a href="#L290">290</a>
+<a href="#L291">291</a>
+<a href="#L292">292</a>
+<a href="#L293">293</a>
+<a href="#L294">294</a>
+<a href="#L295">295</a>
+<a href="#L296">296</a>
+<a href="#L297">297</a>
+<a href="#L298">298</a>
+<a href="#L299">299</a>
+<a href="#L300">300</a>
+<a href="#L301">301</a>
+<a href="#L302">302</a>
+<a href="#L303">303</a>
+<a href="#L304">304</a>
+<a href="#L305">305</a>
+<a href="#L306">306</a>
+<a href="#L307">307</a>
+<a href="#L308">308</a>
+<a href="#L309">309</a>
+<a href="#L310">310</a>
+<a href="#L311">311</a>
+<a href="#L312">312</a>
+<a href="#L313">313</a>
+<a href="#L314">314</a>
+<a href="#L315">315</a>
+<a href="#L316">316</a>
+<a href="#L317">317</a>
+<a href="#L318">318</a>
+<a href="#L319">319</a>
+<a href="#L320">320</a>
+<a href="#L321">321</a>
+<a href="#L322">322</a>
+<a href="#L323">323</a>
+<a href="#L324">324</a>
+<a href="#L325">325</a>
+<a href="#L326">326</a>
+<a href="#L327">327</a>
+<a href="#L328">328</a>
+<a href="#L329">329</a>
+<a href="#L330">330</a>
+<a href="#L331">331</a>
+<a href="#L332">332</a>
+<a href="#L333">333</a>
+<a href="#L334">334</a>
+<a href="#L335">335</a>
+<a href="#L336">336</a>
+<a href="#L337">337</a>
+<a href="#L338">338</a>
+<a href="#L339">339</a>
+<a href="#L340">340</a>
+<a href="#L341">341</a>
+<a href="#L342">342</a>
+<a href="#L343">343</a>
+<a href="#L344">344</a>
+<a href="#L345">345</a>
+<a href="#L346">346</a>
+<a href="#L347">347</a>
+<a href="#L348">348</a>
+<a href="#L349">349</a>
+<a href="#L350">350</a>
+<a href="#L351">351</a>
+<a href="#L352">352</a>
+<a href="#L353">353</a>
+<a href="#L354">354</a>
+<a href="#L355">355</a>
+<a href="#L356">356</a>
+<a href="#L357">357</a>
+<a href="#L358">358</a>
+<a href="#L359">359</a>
+<a href="#L360">360</a>
+<a href="#L361">361</a>
+<a href="#L362">362</a>
+<a href="#L363">363</a>
+<a href="#L364">364</a>
+<a href="#L365">365</a>
+<a href="#L366">366</a>
+<a href="#L367">367</a>
+<a href="#L368">368</a>
+<a href="#L369">369</a>
+<a href="#L370">370</a>
+<a href="#L371">371</a>
+<a href="#L372">372</a>
+<a href="#L373">373</a>
+<a href="#L374">374</a>
+<a href="#L375">375</a>
+<a href="#L376">376</a>
+<a href="#L377">377</a>
+<a href="#L378">378</a>
+<a href="#L379">379</a>
+<a href="#L380">380</a>
+<a href="#L381">381</a>
+<a href="#L382">382</a>
+<a href="#L383">383</a>
+<a href="#L384">384</a>
+<a href="#L385">385</a>
+<a href="#L386">386</a>
+<a href="#L387">387</a>
+<a href="#L388">388</a>
+<a href="#L389">389</a>
+<a href="#L390">390</a>
+<a href="#L391">391</a>
+<a href="#L392">392</a>
+<a href="#L393">393</a>
+<a href="#L394">394</a>
+<a href="#L395">395</a>
+<a href="#L396">396</a>
+<a href="#L397">397</a>
+<a href="#L398">398</a>
+<a href="#L399">399</a>
+<a href="#L400">400</a>
+<a href="#L401">401</a>
+<a href="#L402">402</a>
+<a href="#L403">403</a>
+<a href="#L404">404</a>
+<a href="#L405">405</a>
+<a href="#L406">406</a>
+<a href="#L407">407</a>
+<a href="#L408">408</a>
+<a href="#L409">409</a>
+<a href="#L410">410</a>
+<a href="#L411">411</a>
+<a href="#L412">412</a>
+<a href="#L413">413</a>
+<a href="#L414">414</a>
+<a href="#L415">415</a>
+<a href="#L416">416</a>
+<a href="#L417">417</a>
+<a href="#L418">418</a>
+<a href="#L419">419</a>
+<a href="#L420">420</a>
+<a href="#L421">421</a>
+<a href="#L422">422</a>
+<a href="#L423">423</a>
+<a href="#L424">424</a>
+<a href="#L425">425</a>
+<a href="#L426">426</a>
+<a href="#L427">427</a>
+<a href="#L428">428</a>
+<a href="#L429">429</a>
+<a href="#L430">430</a>
+<a href="#L431">431</a>
+<a href="#L432">432</a>
+<a href="#L433">433</a>
+<a href="#L434">434</a>
+<a href="#L435">435</a>
+<a href="#L436">436</a>
+<a href="#L437">437</a>
+<a href="#L438">438</a>
+<a href="#L439">439</a>
+<a href="#L440">440</a>
+<a href="#L441">441</a>
+<a href="#L442">442</a>
+<a href="#L443">443</a>
+<a href="#L444">444</a>
+<a href="#L445">445</a>
+<a href="#L446">446</a>
+<a href="#L447">447</a>
+<a href="#L448">448</a>
+<a href="#L449">449</a>
+<a href="#L450">450</a>
+<a href="#L451">451</a>
+<a href="#L452">452</a>
+<a href="#L453">453</a>
+<a href="#L454">454</a>
+<a href="#L455">455</a>
+<a href="#L456">456</a>
+<a href="#L457">457</a>
+<a href="#L458">458</a>
+<a href="#L459">459</a>
+<a href="#L460">460</a>
+<a href="#L461">461</a>
+<a href="#L462">462</a>
+<a href="#L463">463</a>
+<a href="#L464">464</a>
+<a href="#L465">465</a>
+<a href="#L466">466</a>
+<a href="#L467">467</a>
+<a href="#L468">468</a>
+<a href="#L469">469</a>
+<a href="#L470">470</a>
+<a href="#L471">471</a>
+<a href="#L472">472</a>
+<a href="#L473">473</a>
+<a href="#L474">474</a>
+<a href="#L475">475</a>
+<a href="#L476">476</a>
+<a href="#L477">477</a>
+<a href="#L478">478</a>
+<a href="#L479">479</a>
+<a href="#L480">480</a>
+<a href="#L481">481</a>
+<a href="#L482">482</a>
+<a href="#L483">483</a>
+<a href="#L484">484</a>
+<a href="#L485">485</a>
+<a href="#L486">486</a>
+<a href="#L487">487</a>
+<a href="#L488">488</a>
+<a href="#L489">489</a>
+<a href="#L490">490</a>
+<a href="#L491">491</a>
+<a href="#L492">492</a>
+<a href="#L493">493</a>
+<a href="#L494">494</a>
+<a href="#L495">495</a>
+<a href="#L496">496</a>
+<a href="#L497">497</a>
+<a href="#L498">498</a>
+<a href="#L499">499</a>
+<a href="#L500">500</a>
+<a href="#L501">501</a>
+<a href="#L502">502</a>
+<a href="#L503">503</a>
+<a href="#L504">504</a>
+<a href="#L505">505</a>
+<a href="#L506">506</a>
+<a href="#L507">507</a>
+<a href="#L508">508</a>
+<a href="#L509">509</a>
+<a href="#L510">510</a>
+<a href="#L511">511</a>
+<a href="#L512">512</a>
+<a href="#L513">513</a>
+<a href="#L514">514</a>
+<a href="#L515">515</a>
+<a href="#L516">516</a>
+<a href="#L517">517</a>
+<a href="#L518">518</a>
+<a href="#L519">519</a>
+<a href="#L520">520</a>
+<a href="#L521">521</a>
+<a href="#L522">522</a>
+<a href="#L523">523</a>
+<a href="#L524">524</a>
+<a href="#L525">525</a>
+<a href="#L526">526</a>
+<a href="#L527">527</a>
+<a href="#L528">528</a>
+<a href="#L529">529</a>
+<a href="#L530">530</a>
+<a href="#L531">531</a>
+<a href="#L532">532</a>
+<a href="#L533">533</a>
+<a href="#L534">534</a>
+<a href="#L535">535</a>
+<a href="#L536">536</a>
+<a href="#L537">537</a>
+<a href="#L538">538</a>
+<a href="#L539">539</a>
+<a href="#L540">540</a>
+<a href="#L541">541</a>
+<a href="#L542">542</a>
+<a href="#L543">543</a>
+<a href="#L544">544</a>
+<a href="#L545">545</a>
+<a href="#L546">546</a>
+<a href="#L547">547</a>
+<a href="#L548">548</a>
+<a href="#L549">549</a>
+<a href="#L550">550</a>
+<a href="#L551">551</a>
+<a href="#L552">552</a>
+<a href="#L553">553</a>
+<a href="#L554">554</a>
+<a href="#L555">555</a>
+<a href="#L556">556</a>
+<a href="#L557">557</a>
+<a href="#L558">558</a>
+<a href="#L559">559</a>
+<a href="#L560">560</a>
+<a href="#L561">561</a>
+<a href="#L562">562</a>
+<a href="#L563">563</a>
+<a href="#L564">564</a>
+<a href="#L565">565</a>
+<a href="#L566">566</a>
+<a href="#L567">567</a>
+<a href="#L568">568</a>
+<a href="#L569">569</a>
+<a href="#L570">570</a>
+<a href="#L571">571</a>
+<a href="#L572">572</a>
+<a href="#L573">573</a>
+<a href="#L574">574</a>
+<a href="#L575">575</a>
+<a href="#L576">576</a>
+<a href="#L577">577</a>
+<a href="#L578">578</a>
+<a href="#L579">579</a>
+<a href="#L580">580</a>
+<a href="#L581">581</a>
+<a href="#L582">582</a>
+<a href="#L583">583</a>
+<a href="#L584">584</a>
+<a href="#L585">585</a>
+<a href="#L586">586</a>
+<a href="#L587">587</a>
+<a href="#L588">588</a>
+<a href="#L589">589</a>
+<a href="#L590">590</a>
+<a href="#L591">591</a>
+<a href="#L592">592</a>
+<a href="#L593">593</a>
+<a href="#L594">594</a>
+<a href="#L595">595</a>
+<a href="#L596">596</a>
+<a href="#L597">597</a>
+<a href="#L598">598</a>
+<a href="#L599">599</a>
+<a href="#L600">600</a>
+<a href="#L601">601</a>
+<a href="#L602">602</a>
+<a href="#L603">603</a>
+<a href="#L604">604</a>
+<a href="#L605">605</a>
+<a href="#L606">606</a>
+<a href="#L607">607</a>
+<a href="#L608">608</a>
+<a href="#L609">609</a>
+<a href="#L610">610</a>
+<a href="#L611">611</a>
+<a href="#L612">612</a>
+<a href="#L613">613</a>
+<a href="#L614">614</a>
+<a href="#L615">615</a>
+<a href="#L616">616</a>
+<a href="#L617">617</a>
+<a href="#L618">618</a>
+<a href="#L619">619</a>
+<a href="#L620">620</a>
+</pre>
+<pre><code class="ocaml">(* SPDX-License-Identifier: AGPL-3.0-or-later *)
+(* Copyright © 2021-2024 OCamlPro *)
+(* Written by the Owi programmers *)
+
+include Symbolic_choice_intf
+
+(*
+     Multicore is based on several layers of monad transformers defined here
+     in submodules. The module as a whole is made to provide a monad to explore in parallel
+     different possibilites, with a notion of priority.
+  *)
+
+module CoreImpl = struct
+  module Schedulable = struct
+    (*
+        A monad representing computation that can be cooperatively scheduled and may need
+        Worker Local Storage (WLS). Computations can yield, and fork (Choice).
+      *)
+    type ('a, 'wls) t = Sched of ('wls -&gt; ('a, 'wls) status) [@@unboxed]
+
+    and ('a, 'wls) status =
+      | Now of 'a
+      | Yield of Prio.t * ('a, 'wls) t
+      | Choice of (('a, 'wls) status * ('a, 'wls) status)
+      | Stop
+
+    let run (Sched mxf : ('a, 'wls) t) (wls : 'wls) : ('a, 'wls) status =
+      <span data-count="76424450">m</span>xf wls
+
+    let return x : _ t = <span data-count="38012421">S</span>ched (Fun.cons<span data-count="38012437">t</span> (Now x))
+
+    let return_status status = <span data-count="28119">S</span>ched (Fun.cons<span data-count="28119">t</span> status)
+
+    let rec bind (mx : ('a, 'wls) t) (f : 'a -&gt; ('b, 'wls) t) : ('b, 'wls) t =
+      <span data-count="38306413">S</span>ched
+        (fun wls -&gt;
+          <span data-count="38303342">l</span>et rec unfold_status (x : ('a, 'wls) status) : ('b, 'wls) status =
+            <span data-count="38418110">m</span>atch x with
+            | <span data-count="38066167">N</span>ow x -&gt; run (<span data-count="38065100">f</span> x) wls
+            | <span data-count="220912">Y</span>ield (prio, lx) -&gt; Yield (prio, bin<span data-count="220900">d</span> lx f)
+            | <span data-count="56067">C</span>hoice (mx1, mx2) -&gt;
+              let mx1' = unfold_status mx1 in
+              <span data-count="56060">l</span>et mx2' = unfold_status mx2 in
+              <span data-count="56059">C</span>hoice (mx1', mx2')
+            | <span data-count="75262">S</span>top -&gt; Stop
+          in
+          unfold_status (ru<span data-count="38305585">n</span> mx wls) )
+
+    let ( let* ) = bind
+
+    let map x f =
+      <span data-count="1151804">l</span>et* x in
+      <span data-count="1139372">r</span>eturn (<span data-count="1139371">f</span> x)
+
+    let ( let+ ) = map
+
+    let yield prio = <span data-count="27375">r</span>eturn_status (Yield (prio, Sched (Fun.cons<span data-count="27373">t</span> (Now ()))))
+
+    let choose a b = <span data-count="13832">S</span>ched (fun wls -&gt; <span data-count="13831">C</span>hoice (ru<span data-count="13833">n</span> a wls, ru<span data-count="13831">n</span> b wls))
+
+    let stop : ('a, 'b) t = return_statu<span data-count="746">s</span> Stop
+
+    let worker_local : ('a, 'a) t = Sched (fun wls -&gt; <span data-count="27566">N</span>ow wls)
+  end
+
+  module Scheduler (Work_datastructure : Work_ds_intf.S) = struct
+    (*
+        A scheduler for Schedulable values.
+      *)
+    type ('a, 'wls) work_queue = ('a, 'wls) Schedulable.t Work_datastructure.t
+
+    type ('a, 'wls) t = { work_queue : ('a, 'wls) work_queue } [@@unboxed]
+
+    let init_scheduler () =
+      <span data-count="406">l</span>et work_queue = Work_datastructure.make () in
+      <span data-count="406">{</span> work_queue }
+
+    let add_init_task sched task =
+      <span data-count="406">W</span>ork_datastructure.push task Prio.default sched.work_queue
+
+    let work wls sched at_worker_value =
+      <span data-count="781">l</span>et rec handle_status (t : _ Schedulable.status) write_back =
+        <span data-count="55380">m</span>atch t with
+        | <span data-count="12406">S</span>top -&gt; ()
+        | <span data-count="1767">N</span>ow x -&gt; at_worker_value x
+        | <span data-count="27374">Y</span>ield (prio, f) -&gt; write_back (prio, f)
+        | <span data-count="13832">C</span>hoice (m1, m2) -&gt;
+          handle_status m1 write_back;
+          <span data-count="13830">h</span>andle_status m2 write_back
+      in
+      Work_datastructure.work_while
+        (fun f write_back -&gt; <span data-count="27729">h</span>andle_status (Schedulable.ru<span data-count="27717">n</span> f wls) write_back)
+        sched.work_queue
+
+    let spawn_worker sched wls_init ~at_worker_value ~at_worker_init
+      ~at_worker_end =
+      <span data-count="783">a</span>t_worker_init ();
+      <span data-count="783">D</span>omain.spawn (fun () -&gt;
+        <span data-count="783">F</span>un.protect ~finally:at_worker_end (fun () -&gt;
+          <span data-count="783">t</span>ry
+            let wls = wls_init () in
+            <span data-count="781">w</span>or<span data-count="739">k</span> wls sched
+              (at_worker_value ~close_work_queue:(fun () -&gt;
+                 <span data-count="33">W</span>ork_datastructure.close sched.work_queue ) )
+          with <span data-count="0">e</span> -&gt;
+            let e_s = Printexc.to_string e in
+            <span data-count="0">l</span>et bt = Printexc.get_raw_backtrace () in
+            <span data-count="0">l</span>et bt_s = Printexc.raw_backtrace_to_string bt in
+            <span data-count="0">l</span>et bt_s =
+              if String.equal "" bt_s then
+                <span data-count="0">"</span>use OCAMLRUNPARAM=b to get the backtrace"
+              else <span data-count="0">b</span>t_s
+            in
+            Log.err (fun m -&gt;
+              <span data-count="0">m</span> "a worker ended with exception %s, backtrace is: @\n@[&lt;v&gt;%s@]"
+                e_s bt_s );
+            <span data-count="0">P</span>rintexc.raise_with_backtrace e bt ) )
+  end
+
+  module State = struct
+    (*
+        Add a notion of State to the Schedulable monad
+        ("Transformer without module functor" style)
+      *)
+    module M = Schedulable
+
+    type ('a, 's) t = St of ('s -&gt; ('a * 's, Solver.t) M.t) [@@unboxed]
+
+    let run (St mxf) st = <span data-count="74970666">m</span>xf st
+
+    let return x = <span data-count="34556438">S</span>t (fun st -&gt; <span data-count="34556180">M</span>.return (x, st))
+
+    let lift (x : ('a, _) M.t) : ('a, 's) t =
+      <span data-count="30359">l</span>et ( let+ ) = M.( let+ ) in
+      St
+        (fun (st : 's) -&gt;
+          <span data-count="67347">l</span>et+ x in
+          <span data-count="54889">(</span>x, st) )
+
+    let bind mx f =
+      <span data-count="36813639">S</span>t
+        (fun st -&gt;
+          <span data-count="36933522">l</span>et ( let* ) = M.( let* ) in
+          let* x, new_st = ru<span data-count="36933611">n</span> mx st in
+          <span data-count="36926792">r</span>un (<span data-count="36926571">f</span> x) new_st )
+
+    let ( let* ) = bind
+
+    let map x f =
+      <span data-count="4713267">l</span>et* x in
+      <span data-count="4823171">r</span>eturn (<span data-count="4823166">f</span> x)
+
+    let liftF2 f x y = <span data-count="13833">S</span>t (fun st -&gt; <span data-count="13833">f</span> (ru<span data-count="13832">n</span> x st) (ru<span data-count="13832">n</span> y st))
+
+    let ( let+ ) = map
+
+    let with_state f = <span data-count="2164463">S</span>t (fun st -&gt; <span data-count="2248015">M</span>.return (<span data-count="2248034">f</span> st))
+
+    let modify_state f = <span data-count="69599">S</span>t (fun st -&gt; <span data-count="69602">M</span>.return ((), <span data-count="69600">f</span> st))
+
+    let project_state (project_and_backup : 'st1 -&gt; 'st2 * 'backup) restore
+      other =
+      <span data-count="1084459">S</span>t
+        (fun st -&gt;
+          <span data-count="1084456">l</span>et ( let+ ) = M.( let+ ) in
+          let proj, backup = project_and_backup st in
+          <span data-count="1084451">l</span>et+ res, new_state = ru<span data-count="1084462">n</span> other proj in
+          <span data-count="1084484">(</span>res, restor<span data-count="1084478">e</span> backup new_state) )
+  end
+
+  module Eval = struct
+    (*
+        Add a notion of faillibility to the evaluation
+        ("Transformer without module functor" style)
+      *)
+    module M = State
+
+    type ('a, 's) t = ('a eval, 's) M.t
+
+    let return x : _ t = <span data-count="29733009">M</span>.return (EVal x)
+
+    let lift x =
+      <span data-count="2264418">l</span>et ( let+ ) = M.( let+ ) in
+      let+ x in
+      <span data-count="2372511">E</span>Val x
+
+    let bind (mx : _ t) f : _ t =
+      <span data-count="32100579">l</span>et ( let* ) = M.( let* ) in
+      let* mx in
+      <span data-count="32103745">m</span>atch mx with
+      | <span data-count="32103542">E</span>Val x -&gt; f x
+      | <span data-count="197">E</span>Trap _ as mx -&gt; M.return mx
+      | <span data-count="64">E</span>Assert _ as mx -&gt; M.return mx
+
+    let ( let* ) = bind
+
+    let map mx f =
+      <span data-count="2448857">l</span>et ( let+ ) = M.( let+ ) in
+      let+ mx in
+      <span data-count="2450663">m</span>atch mx with
+      | <span data-count="2450273">E</span>Val x -&gt; EVal (<span data-count="2450284">f</span> x)
+      | <span data-count="199">E</span>Trap _ as mx -&gt; mx
+      | <span data-count="192">E</span>Assert _ as mx -&gt; mx
+
+    let ( let+ ) = map
+  end
+
+  module Make (Thread : Thread_intf.S) : sig
+    (*
+      The core implementation of the monad. It is isolated in a module to restict its exposed interface
+      and maintain its invariant. In particular, choose must guarantee that the Thread.t is cloned in each branch.
+      Using functions defined here should be foolproof.
+    *)
+
+    type thread := Thread.t
+
+    type 'a t = ('a, Thread.t) Eval.t
+
+    val return : 'a -&gt; 'a t
+
+    val bind : 'a t -&gt; ('a -&gt; 'b t) -&gt; 'b t
+
+    val ( let* ) : 'a t -&gt; ('a -&gt; 'b t) -&gt; 'b t
+
+    val map : 'a t -&gt; ('a -&gt; 'b) -&gt; 'b t
+
+    val ( let+ ) : 'a t -&gt; ('a -&gt; 'b) -&gt; 'b t
+
+    val assertion_fail :
+         Symbolic_boolean.t
+      -&gt; Smtml.Model.t
+      -&gt; (int * string) list
+      -&gt; int list
+      -&gt; Symbol_scope.t
+      -&gt; 'a t
+
+    val stop : 'a t
+
+    val trap : Result.err -&gt; 'a t
+
+    val thread : thread t
+
+    val yield : Prio.t -&gt; unit t
+
+    val solver : Solver.t t
+
+    val with_thread : (thread -&gt; 'a) -&gt; 'a t
+
+    val set_thread : thread -&gt; unit t
+
+    val modify_thread : (thread -&gt; thread) -&gt; unit t
+
+    (*
+       Indicates a possible choice between two values. Thread duplication
+       is already handled by choose and should not be done before by the caller.
+    *)
+    val choose : 'a t -&gt; 'a t -&gt; 'a t
+
+    type 'a run_result = ('a eval * thread) Seq.t
+
+    val run :
+         Symbolic_parameters.Exploration_strategy.t
+      -&gt; workers:int
+      -&gt; Smtml.Solver_type.t
+      -&gt; 'a t
+      -&gt; thread
+      -&gt; at_worker_value:
+           (close_work_queue:(unit -&gt; unit) -&gt; 'a eval * thread -&gt; unit)
+      -&gt; at_worker_init:(unit -&gt; unit)
+      -&gt; at_worker_end:(unit -&gt; unit)
+      -&gt; unit Domain.t array
+  end = struct
+    include Eval
+
+    type 'a t = ('a, Thread.t) Eval.t
+
+    (*
+       Here we define functions to seamlessly
+       operate on the three monads layers
+    *)
+
+    let lift_schedulable (v : ('a, _) Schedulable.t) : 'a t =
+      <span data-count="30359">l</span>et v = State.lift v in
+      <span data-count="30359">l</span>ift v
+
+    let with_thread (f : Thread.t -&gt; 'a) : 'a t =
+      <span data-count="2164461">l</span>et x = State.with_state (fun st -&gt; <span data-count="2248012">(</span><span data-count="2248034">f</span> st, st)) in
+      <span data-count="2164463">l</span>ift x
+
+    let thread = with_threa<span data-count="1492">d</span> Fun.id
+
+    let modify_thread f = <span data-count="69598">l</span>ift (State.modify_stat<span data-count="69597">e</span> f)
+
+    let set_thread st = <span data-count="28252">m</span>odify_thread (Fun.cons<span data-count="28251">t</span> st)
+
+    let solver = lift_schedulabl<span data-count="1492">e</span> Schedulable.worker_local
+
+    let choose a b =
+      (* Here we are doing an optimization: we can clone only one of the two thread because the clone should not have a dependency on the previous state, it is thus safe to re-use it for the other thread. We choose to clone `b` rather than `a` because `a` is likely to be the first one executed. *)
+      <span data-count="13832">l</span>et* thread in
+      <span data-count="13833">l</span>et new_thread = Thread.clone thread in
+      <span data-count="13833">l</span>et b =
+        let* () = modify_threa<span data-count="13832">d</span> (fun (_ : Thread.t) -&gt; <span data-count="13831">n</span>ew_thread) in
+        <span data-count="13832">b</span>
+      in
+      State.liftF2 Schedulable.choose a b
+
+    let yield prio = <span data-count="27375">l</span>ift_schedulable @@ Schedulable.yiel<span data-count="27373">d</span> prio
+
+    let stop = lift_schedulabl<span data-count="1492">e</span> Schedulable.stop
+
+    type 'a run_result = ('a eval * Thread.t) Seq.t
+
+    let run exploration_strategy ~workers solver t thread ~at_worker_value
+      ~at_worker_init ~at_worker_end =
+      <span data-count="406">l</span>et module M =
+        ( val Symbolic_parameters.Exploration_strategy.to_work_ds_modul<span data-count="406">e</span>
+                exploration_strategy )
+      in
+      let module Scheduler = Scheduler (M) in
+      let open Scheduler in
+      let sched = init_scheduler () in
+      <span data-count="406">a</span>dd_init_task sched (State.ru<span data-count="406">n</span> t thread);
+      <span data-count="406">i</span>f workers &gt; 1 then <span data-count="377">L</span>ogs_threaded.enabl<span data-count="377">e</span> ();
+      <span data-count="406">A</span>rray.init workers (fun _i -&gt;
+        <span data-count="783">s</span>pawn_worker sched (Solver.fres<span data-count="783">h</span> solver) ~at_worker_value
+          ~at_worker_init ~at_worker_end )
+
+    let trap t =
+      <span data-count="178">l</span>et* thread in
+      <span data-count="178">l</span>et* solver in
+      <span data-count="178">l</span>et path_condition = Thread.pc thread in
+      <span data-count="178">l</span>et symbol_scopes = Thread.symbol_scopes thread in
+      <span data-count="178">l</span>et stats = Thread.bench_stats thread in
+      <span data-count="178">l</span>et* model =
+        Benchmark.handle_time_span stats.solver_final_model_tim<span data-count="178">e</span> @@ fun () -&gt;
+        <span data-count="178">m</span>atch Solver.model_of_path_condition solver ~path_condition with
+        | <span data-count="178">S</span>ome model -&gt; return model
+        | <span data-count="0">N</span>one -&gt;
+          (* It can happen when the solver is interrupted *)
+          (* TODO: once https://github.com/formalsec/smtml/pull/479 is merged
+             if solver was interrupted then stop else assert false *)
+          stop
+      in
+      <span data-count="178">l</span>et labels = Thread.labels thread in
+      <span data-count="178">l</span>et breadcrumbs = Thread.breadcrumbs thread in
+      <span data-count="178">S</span>tate.return (ETrap (t, model, labels, breadcrumbs, symbol_scopes))
+
+    let assertion_fail c model labels bcrumbs symbol_scopes =
+      <span data-count="64">S</span>tate.return (EAssert (c, model, labels, bcrumbs, symbol_scopes))
+  end
+end
+
+(*
+    We can now use CoreImpl only through its exposed signature which
+    maintains all invariants.
+  *)
+module Make (Thread : Thread_intf.S) = struct
+  include CoreImpl.Make (Thread)
+
+  let add_pc (c : Symbolic_boolean.t) =
+    <span data-count="28253">l</span>et c = Symbolic_boolean.to_expr c in
+    <span data-count="28252">l</span>et c = Smtml.Expr.simplify c in
+    <span data-count="28252">m</span>atch Smtml.Expr.view c with
+    | <span data-count="0">V</span>al True -&gt; return ()
+    | <span data-count="0">V</span>al False -&gt; stop
+    | <span data-count="28252">_</span> -&gt;
+      let* thread in
+      <span data-count="28253">l</span>et c = Symbolic_boolean.of_expr c in
+      <span data-count="28251">l</span>et new_thread = Thread.add_pc thread c in
+      <span data-count="28254">s</span>et_thread new_thread
+  [@@inline]
+
+  let get_pc () =
+    <span data-count="8">l</span>et+ thread in
+    <span data-count="8">l</span>et pc = Thread.pc thread in
+    <span data-count="8">l</span>et pc = Symbolic_path_condition.slice pc in
+    <span data-count="8">L</span>ist.fold_left Smtml.Expr.Set.union Smtml.Expr.Set.empty pc
+
+  let add_breadcrumb crumb =
+    <span data-count="25940">m</span>odify_thread (fun t -&gt; <span data-count="25939">T</span>hread.add_breadcrumb t crumb)
+
+  let add_label label = <span data-count="2">m</span>odify_thread (fun t -&gt; <span data-count="2">T</span>hread.add_label t label)
+
+  let open_scope scope = <span data-count="10">m</span>odify_thread (fun t -&gt; <span data-count="10">T</span>hread.open_scope t scope)
+
+  let close_scope () = <span data-count="10">m</span>odify_thread (fun t -&gt; <span data-count="10">T</span>hread.close_scope t)
+
+  let with_new_invisible_symbol ty f =
+    <span data-count="1">l</span>et* thread in
+    <span data-count="1">l</span>et n = Thread.num_symbols thread in
+    <span data-count="1">l</span>et+ () = modify_threa<span data-count="1">d</span> Thread.incr_num_symbols in
+    <span data-count="1">l</span>et sym = Fmt.kstr (Smtml.Symbol.mak<span data-count="1">e</span> ty) "symbol_invisible_%i" n in
+    <span data-count="1">f</span> sym
+
+  let with_new_symbol ty f =
+    <span data-count="1408">l</span>et* thread in
+    <span data-count="1408">l</span>et n = Thread.num_symbols thread in
+    <span data-count="1408">l</span>et sym = Fmt.kstr (Smtml.Symbol.mak<span data-count="1408">e</span> ty) "symbol_%d" n in
+    <span data-count="1408">l</span>et+ () =
+      modify_threa<span data-count="1408">d</span> (fun thread -&gt;
+        <span data-count="1408">l</span>et thread = Thread.add_symbol thread sym in
+        <span data-count="1408">T</span>hread.incr_num_symbols thread )
+    in
+    <span data-count="1408">f</span> sym
+
+  (*
+    Yielding is currently done each time the solver is about to be called,
+    in check_reachability and get_model.
+  *)
+  let check_reachability v prio =
+    <span data-count="26343">l</span>et* () = yiel<span data-count="26342">d</span> prio in
+    <span data-count="26302">l</span>et* thread in
+    <span data-count="26302">l</span>et* solver in
+    <span data-count="26302">l</span>et pc = Thread.pc thread |&gt; <span data-count="26302">S</span>ymbolic_path_condition.slice_on_condition v in
+    <span data-count="26302">l</span>et stats = Thread.bench_stats thread in
+    <span data-count="26302">l</span>et reachability =
+      Benchmark.handle_time_span stats.solver_sat_time @@ fun () -&gt;
+      <span data-count="26302">S</span>olver.check solver pc
+    in
+    <span data-count="26293">r</span>eturn reachability
+
+  let get_model_or_stop symbol =
+    <span data-count="1031">l</span>et* () = yiel<span data-count="1032">d</span> Prio.default in
+    <span data-count="1021">l</span>et* solver in
+    <span data-count="1021">l</span>et* thread in
+    <span data-count="1021">l</span>et set =
+      Thread.pc thread |&gt; <span data-count="1021">S</span>ymbolic_path_condition.slice_on_symbol symbol
+    in
+    <span data-count="1021">l</span>et stats = Thread.bench_stats thread in
+    <span data-count="1021">l</span>et symbol_scopes = Symbol_scope.of_symbol symbol in
+    <span data-count="1021">l</span>et sat_model =
+      Benchmark.handle_time_span stats.solver_intermediate_model_time (fun () -&gt;
+        <span data-count="1021">S</span>olver.model_of_set solver ~symbol_scopes ~set )
+    in
+    <span data-count="1018">m</span>atch sat_model with
+    | <span data-count="138">`</span>Unsat -&gt; stop
+    | <span data-count="880">`</span>Model model -&gt; begin
+      match Smtml.Model.evaluate model symbol with
+      | <span data-count="881">S</span>ome v -&gt; return v
+      | None -&gt;
+        (* the model exists so the symbol should evaluate *)
+        assert false
+    end
+    | <span data-count="0">`</span>Unknown -&gt;
+      (* It can happen when the solver is interrupted *)
+      (* TODO: once https://github.com/formalsec/smtml/pull/479 is merged
+               if solver was interrupted then stop else assert false *)
+      stop
+
+  let select_inner ~explore_first ?(with_breadcrumbs = <span data-count="1425608">t</span>rue)
+    ~check_only_true_branch (cond : Symbolic_boolean.t) ~prio_true ~prio_false =
+    <span data-count="1523304">l</span>et cond = Symbolic_boolean.to_expr cond in
+    <span data-count="1523289">l</span>et cond = Smtml.Expr.simplify cond in
+    <span data-count="1523326">m</span>atch Smtml.Expr.view cond with
+    | <span data-count="204509">V</span>al True -&gt; return true
+    | <span data-count="1305421">V</span>al False -&gt; return false
+    | <span data-count="0">V</span>al (Bitv _bv) -&gt; Fmt.failwith "unreachable (type error)"
+    | <span data-count="13392">_</span> -&gt;
+      let is_other_branch_unsat = Atomic.make false in
+      <span data-count="13392">l</span>et branch condition final_value prio =
+        <span data-count="26343">l</span>et* () = add_p<span data-count="26343">c</span> condition in
+        <span data-count="26342">l</span>et* () =
+          if with_breadcrumbs then <span data-count="25056">a</span>dd_breadcrum<span data-count="25057">b</span> (if final_value then <span data-count="12529">1</span> else <span data-count="12527">0</span>)
+          else <span data-count="1285">r</span>etur<span data-count="1285">n</span> ()
+        in
+        (* this is an optimisation under the assumption that the PC is always SAT (i.e. we are performing eager pruning), in such a case, when a branch is unsat, we don't have to check the reachability of the other's branch negation, because it is always going to be SAT. *)
+        <span data-count="26343">i</span>f Atomic.get is_other_branch_unsat then <span data-count="0">b</span>egin
+          Log.debug (fun m -&gt;
+            <span data-count="0">m</span> "The SMT call for the %b branch was optimized away" final_value );
+          (* the other branch is unsat, we must be SAT and don't need to check reachability! *)
+          <span data-count="0">r</span>eturn final_value
+        end
+        else <span data-count="26343">b</span>egin
+          (* the other branch is SAT (or we haven't computed it yet), so we have to check reachability *)
+          let* satisfiability = check_reachabilit<span data-count="26343">y</span> condition prio in
+          <span data-count="26293">b</span>egin match satisfiability with
+          | <span data-count="14206">`</span>Sat -&gt; return final_value
+          | <span data-count="12087">`</span>Unsat -&gt;
+            Atomic.set is_other_branch_unsat true;
+            <span data-count="12087">s</span>top
+          | <span data-count="0">`</span>Unknown -&gt;
+            (* It can happen when the solver is interrupted *)
+            (* TODO: once https://github.com/formalsec/smtml/pull/479 is merged
+                   if solver was interrupted then stop else assert false *)
+            stop
+          end
+        end
+      in
+
+      let cond = Symbolic_boolean.of_expr cond in
+
+      <span data-count="13392">l</span>et true_branch = branch cond true prio_true in
+
+      <span data-count="13392">i</span>f check_only_true_branch then <span data-count="441">t</span>rue_branch
+      else
+        <span data-count="12951">l</span>et false_branch =
+          branch (Symbolic_boolean.no<span data-count="12951">t</span> cond) false prio_false
+        in
+        <span data-count="12951">l</span>et* thread in
+        <span data-count="12951">T</span>hread.incr_path_count thread;
+        <span data-count="12951">i</span>f explore_first then <span data-count="12529">c</span>hoose true_branch false_branch
+        else <span data-count="422">c</span>hoose false_branch true_branch
+  [@@inline]
+
+  let select (cond : Symbolic_boolean.t) ~prio_true ~prio_false =
+    <span data-count="1425614">s</span>elect_inner cond ~explore_first:true ~prio_true ~prio_false
+      ~check_only_true_branch:false
+  [@@inline]
+
+  let summary_symbol (e : Smtml.Expr.t) =
+    <span data-count="152">l</span>et* thread in
+    <span data-count="152">m</span>atch Smtml.Expr.view e with
+    | <span data-count="4">S</span>ymbol sym -&gt; return (None, sym)
+    | <span data-count="148">_</span> -&gt;
+      let num_symbols = Thread.num_symbols thread in
+      <span data-count="148">l</span>et+ () = modify_threa<span data-count="148">d</span> Thread.incr_num_symbols in
+      <span data-count="148">l</span>et sym_name = Fmt.str "choice_i32_%i" num_symbols in
+      <span data-count="148">l</span>et sym_type = Smtml.Ty.Ty_bitv 32 in
+      let sym = Smtml.Symbol.make sym_type sym_name in
+      <span data-count="148">l</span>et assign = Smtml.Expr.(relo<span data-count="148">p</span> Ty_bool Eq (symbo<span data-count="148">l</span> sym) e) in
+      (Some assign, sym)
+
+  let select_i32 (i : Symbolic_i32.t) =
+    <span data-count="53049">l</span>et i = Smtml.Expr.simplify i in
+    <span data-count="53038">m</span>atch Smtml.Expr.view i with
+    | <span data-count="52891">V</span>al (Bitv bv) when Smtml.Bitvector.numbit<span data-count="52883">s</span> bv &lt;= 32 -&gt;
+      <span data-count="52884">r</span>eturn (Smtml.Bitvector.to_int3<span data-count="52897">2</span> bv)
+    | <span data-count="152">_</span> -&gt;
+      let* assign, symbol = summary_symbo<span data-count="152">l</span> i in
+      <span data-count="152">l</span>et* () =
+        match assign with
+        | <span data-count="148">S</span>ome assign -&gt;
+          let assign = Symbolic_boolean.of_expr assign in
+          <span data-count="148">a</span>dd_p<span data-count="148">c</span> assign
+        | <span data-count="4">N</span>one -&gt; retur<span data-count="4">n</span> ()
+      in
+      <span data-count="152">l</span>et rec generator () =
+        <span data-count="1033">l</span>et* possible_value = get_model_or_sto<span data-count="1029">p</span> symbol in
+        <span data-count="882">l</span>et i =
+          match possible_value with
+          | <span data-count="882">S</span>mtml.Value.Bitv bv when Smtml.Bitvector.numbit<span data-count="882">s</span> bv &lt;= 32 -&gt;
+            <span data-count="882">S</span>mtml.Bitvector.to_int3<span data-count="882">2</span> bv
+          | _ -&gt;
+            (* it should be a value! *)
+            assert false
+        in
+        let s = Smtml.Expr.symbol symbol in
+        (* TODO: everything which follows look like select_inner and could probably be simplified by calling it directly! *)
+        <span data-count="882">l</span>et this_value_cond =
+          let open Smtml.Expr in
+          Bitv.I32.(s = <span data-count="882">v</span> i) |&gt; Symbolic_boolean.of_exp<span data-count="881">r</span>
+        in
+        let not_this_value_cond = Symbolic_boolean.not this_value_cond in
+        <span data-count="882">l</span>et this_val_branch =
+          let* () = add_breadcrum<span data-count="881">b</span> (Int32.to_in<span data-count="882">t</span> i) in
+          <span data-count="881">l</span>et+ () = add_p<span data-count="880">c</span> this_value_cond in
+          <span data-count="881">i</span>
+        in
+        let not_this_val_branch =
+          let* () = add_p<span data-count="881">c</span> not_this_value_cond in
+          <span data-count="882">g</span>enerator ()
+        in
+        let* thread in
+        <span data-count="881">T</span>hread.incr_path_count thread;
+        <span data-count="881">c</span>hoose this_val_branch not_this_val_branch
+      in
+      generator ()
+
+  let assertion (c : Symbolic_boolean.t) =
+    <span data-count="96965">l</span>et* assertion_true =
+      select_inne<span data-count="96965">r</span> c ~with_breadcrumbs:false ~explore_first:false
+        ~prio_true:Prio.Default ~prio_false:Prio.Default
+        ~check_only_true_branch:false
+    in
+    <span data-count="96993">i</span>f assertion_true then <span data-count="96928">r</span>eturn ()
+    else
+      <span data-count="65">l</span>et* thread in
+      <span data-count="65">l</span>et* solver in
+      <span data-count="65">l</span>et path_condition = Thread.pc thread in
+      <span data-count="65">l</span>et symbol_scopes = Thread.symbol_scopes thread in
+      <span data-count="65">l</span>et stats = Thread.bench_stats thread in
+      <span data-count="65">l</span>et* model =
+        Benchmark.handle_time_span stats.solver_final_model_tim<span data-count="64">e</span> @@ fun () -&gt;
+        <span data-count="65">m</span>atch Solver.model_of_path_condition solver ~path_condition with
+        | <span data-count="64">S</span>ome model -&gt; return model
+        | <span data-count="0">N</span>one -&gt;
+          (* It can happen when the solver is interrupted *)
+          (* TODO: once https://github.com/formalsec/smtml/pull/479 is merged
+               if solver was interrupted then stop else assert false *)
+          stop
+      in
+      <span data-count="64">l</span>et breadcrumbs = Thread.breadcrumbs thread in
+      <span data-count="64">l</span>et labels = Thread.labels thread in
+      <span data-count="64">a</span>ssertion_fail c model labels breadcrumbs symbol_scopes
+
+  let assume c =
+    <span data-count="750">l</span>et* assertion_true =
+      select_inne<span data-count="750">r</span> c ~with_breadcrumbs:false ~explore_first:true
+        ~prio_true:Prio.Default ~prio_false:Prio.Default
+        ~check_only_true_branch:true
+    in
+    <span data-count="749">i</span>f assertion_true then <span data-count="570">r</span>eturn () else <span data-count="179">s</span>top
+
+  let ite (c : Symbolic_boolean.t) ~(if_true : Symbolic_value.t)
+    ~(if_false : Symbolic_value.t) : Symbolic_value.t t =
+    <span data-count="21397">m</span>atch (if_true, if_false) with
+    | <span data-count="21395">I</span>32 if_true, I32 if_false -&gt;
+      return (Symbolic_value.I32 (Symbolic_boolean.it<span data-count="21395">e</span> c ~if_true ~if_false))
+    | <span data-count="0">I</span>64 if_true, I64 if_false -&gt;
+      return (Symbolic_value.I64 (Symbolic_boolean.it<span data-count="0">e</span> c ~if_true ~if_false))
+    | <span data-count="2">F</span>32 if_true, F32 if_false -&gt;
+      return (Symbolic_value.F32 (Symbolic_boolean.it<span data-count="2">e</span> c ~if_true ~if_false))
+    | <span data-count="0">F</span>64 if_true, F64 if_false -&gt;
+      return (Symbolic_value.F64 (Symbolic_boolean.it<span data-count="0">e</span> c ~if_true ~if_false))
+    | <span data-count="0">R</span>ef _, Ref _ -&gt;
+      let+ b = selec<span data-count="0">t</span> c ~prio_true:Prio.Default ~prio_false:Prio.Default in
+      <span data-count="0">i</span>f b then <span data-count="0">i</span>f_true else <span data-count="0">i</span>f_false
+    | _, _ -&gt; assert false
+end
+</code></pre>
+      </div>
+    </div>
+    <script src="../../coverage.js"></script>
+  </body>
+</html>
